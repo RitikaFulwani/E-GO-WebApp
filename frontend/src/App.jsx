@@ -14,13 +14,19 @@ import CaptainLogout from './pages/CaptainLogout'
 import Riding from './pages/Riding'
 import CaptainRiding from './pages/CaptainRiding'
 import 'remixicon/fonts/remixicon.css'
+import Header from './components/Header'; // Import the Header
+import About from "./pages/About";
+import Help from "./pages/Help";
 
 const App = () => {
 
   return (
     <div>
+        <Header /> {/* Add Header at the top */}
       <Routes>
         <Route path='/' element={<Start />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/help" element={<Help />} />
         <Route path='/login' element={<UserLogin />} />
         <Route path='/riding' element={<Riding />} />
         <Route path='/captain-riding' element={<CaptainRiding />} />
