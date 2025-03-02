@@ -17,6 +17,8 @@ import 'remixicon/fonts/remixicon.css'
 import Header from './components/Header'; // Import the Header
 import About from "./pages/About";
 import Help from "./pages/Help";
+import CarbonFootprint from "./pages/CarbonFootprint";
+
 
 const App = () => {
 
@@ -30,6 +32,7 @@ const App = () => {
         <Route path='/login' element={<UserLogin />} />
         <Route path='/riding' element={<Riding />} />
         <Route path='/captain-riding' element={<CaptainRiding />} />
+        <Route path="/carbon-footprint" element={<CarbonFootprint />} />
 
         <Route path='/signup' element={<UserSignup />} />
         <Route path='/captain-login' element={<Captainlogin />} />
