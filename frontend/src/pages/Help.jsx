@@ -13,7 +13,7 @@ const Help = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Hero Section */}
-      <div className="relative w-full h-64 bg-cover bg-center flex flex-col justify-center items-center"
+      <div className="relative w-full h-64 bg-cover bg-center flex flex-col justify-center items-center mt-4"
         style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?sky,clouds')" }}>
         <h1 className="text-4xl font-bold text-blue-600">Welcome to E-GO Support</h1>
         <p className="text-gray-600 text-center mt-2 max-w-2xl">
@@ -22,9 +22,9 @@ const Help = () => {
       </div>
 
       {/* Help Categories */}
-      <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-6 max-w-6xl mx-auto  px-4">
+      <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-6 max-w-6xl mx-auto px-4">
         {supportOptions.map((option, index) => (
-          <Link to={option.link} key={index} className="bg-white p-6 rounded-xl shadow-md text-center border border-gray-200 hover:shadow-lg transition duration-300">
+          <Link to={option.link} key={index} className="bg-white p-6 rounded-xl shadow-md text-center border border-gray-200 hover:shadow-lg transition duration-300 ">
             <div className="flex justify-center">{option.icon}</div>
             <h2 className="text-lg font-semibold mt-3">{option.title}</h2>
           </Link>

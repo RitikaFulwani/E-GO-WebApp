@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Features from './Features'; // Import the Features component
-import SMSBooking from "../components/SMSBooking";
+import Description from '../components/Description'
+import Team from '../components/Team'
+import Safe from '../components/Safe'
+import Footer from '../components/Footer';
+import ContactUs from '../components/ContactUs';
+// import SMSBooking from "../components/SMSBooking";
 
 
 const Start = () => {
@@ -11,7 +16,7 @@ const Start = () => {
       {/* Full-Screen Background Image */}
       <div 
         className="w-full h-screen  bg-fit bg-no-repeat bg-center relative"
-        style={{ backgroundImage: "url('/start.png')", marginTop: "56px" }}
+        style={{ backgroundImage: "url('/start.png')", marginTop: "50px" }}
         >
         {/* Overlay Content */}
         <div className="absolute bottom-0 left-0 right-0 bg-white pb-6 py-10 px-5">
@@ -29,6 +34,14 @@ const Start = () => {
 
       {/* Features Section */}
       <Features /> {/* Add the Features component here */}
+      
+      <Description />
+      <Safe/>
+      <Team/>
+      <ContactUs />
+
+      <Footer/>
+      
     </div>
   );
 };

@@ -5,29 +5,38 @@ const CarbonFootprint = () => {
   const [transport, setTransport] = useState("car");
   const [emissions, setEmissions] = useState(null);
 
-  // Emission factors (kg CO2 per km)
   const emissionRates = {
-    car: 0.21, // Example: 0.21 kg CO2 per km for a petrol car
+    car: 0.21,
     bus: 0.05,
     train: 0.03,
     bike: 0,
     walk: 0,
   };
 
+  const averageMonthlyEmission = 126; // in kg CO2
+  const electricEmissionRate = 0.01; // very low for electric vehicles
+
   const calculateEmissions = () => {
     if (distance && !isNaN(distance)) {
-      setEmissions((distance * emissionRates[transport]).toFixed(2));
+      const userEmission = (distance * emissionRates[transport]).toFixed(2);
+      const savedEmission = (distance * (emissionRates["car"] - electricEmissionRate)).toFixed(2);
+      setEmissions({
+        calculated: userEmission,
+        saved: savedEmission,
+      });
     } else {
       setEmissions(null);
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-semibold mb-6">Carbon Footprint Tracker</h1>
+    <div className="bg-carbon bg-cover bg-center min-h-screen flex flex-col items-center justify-center mt-8 p-6">
+      <h1 className="text-4xl font-bold text-blue-700 drop-shadow mb-8">
+        Carbon Footprint Tracker
+      </h1>
 
-      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-        <label className="block mb-2 text-lg">Distance (in km)</label>
+      <div className="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg w-full max-w-md">
+        <label className="block mb-2 text-lg font-semibold">Distance (in km)</label>
         <input
           type="number"
           value={distance}
@@ -36,7 +45,7 @@ const CarbonFootprint = () => {
           placeholder="Enter distance..."
         />
 
-        <label className="block mb-2 text-lg">Transport Mode</label>
+        <label className="block mb-2 text-lg font-semibold">Transport Mode</label>
         <select
           value={transport}
           onChange={(e) => setTransport(e.target.value)}
@@ -55,11 +64,30 @@ const CarbonFootprint = () => {
         >
           Calculate Footprint
         </button>
+      </div>
 
-        {emissions !== null && (
-          <p className="mt-4 text-lg font-semibold">
-            Estimated Emissions: {emissions} kg CO₂
-          </p>
+      {/* Always visible emissions section */}
+      <div className="mt-8 w-full max-w-md bg-white bg-opacity-90 p-6 rounded-lg shadow-md text-center">
+        <h2 className="text-xl font-semibold text-gray-800 mb-4">Your Carbon Insights</h2>
+
+        <p className="mb-2 text-gray-700">
+          🚗 <strong>Average CO₂ released</strong> by ride app users monthly:{" "}
+          <span className="font-bold text-blue-700">{averageMonthlyEmission} kg</span>
+        </p>
+
+        {emissions ? (
+          <>
+            <p className="mb-2 text-gray-700">
+              📌 <strong>Your estimated emission:</strong>{" "}
+              <span className="font-bold text-red-600">{emissions.calculated} kg CO₂</span>
+            </p>
+            <p className="mb-2 text-gray-700">
+              🌱 <strong>CO₂ saved by using E-Go:</strong>{" "}
+              <span className="font-bold text-green-600">{emissions.saved} kg CO₂</span>
+            </p>
+          </>
+        ) : (
+          <p className="text-sm text-gray-500"></p>
         )}
       </div>
     </div>

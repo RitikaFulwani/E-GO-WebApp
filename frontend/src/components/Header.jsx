@@ -8,8 +8,8 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-blue-600 text-white p-4 fixed top-0 left-0 w-full z-50">
-      <div className="flex justify-between items-center w-full px-6">
+<header className="bg-blue-600 text-white p-4 fixed top-0 left-0 w-full z-50 rounded-b-2xl">
+<div className="flex justify-between items-center w-full px-6">
         {/* Left-aligned Logo */}
         <div className="text-2xl font-bold">E-GO</div>
 
@@ -18,7 +18,7 @@ const Header = () => {
           <Link to="/" className="hover:text-blue-300">Home</Link>
           <Link to="/login" className="hover:text-blue-300">Ride With Us</Link>
           <Link to="/captain-signup" className="hover:text-blue-300">Drive With Us</Link>
-          <Link to="/carbon-footprint" className="hover:text-blue-300 font-semibold">Carbon Footprint</Link> {/* Added */}
+          <Link to="/carbon-footprint" className="hover:text-blue-300 ">Carbon Footprint</Link> {/* Added */}
           <Link to="/about" className="hover:text-blue-300">About</Link>
           <Link to="/help" className="hover:text-blue-300">Help</Link>
         </nav>
@@ -39,7 +39,7 @@ const Header = () => {
             <Link to="/" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>Home</Link>
             <Link to="/login" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>Ride With Us</Link>
             <Link to="/captain-signup" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>Drive With Us</Link>
-            <Link to="/carbon-footprint" className="hover:text-blue-300 font-semibold" onClick={() => setMenuOpen(false)}>Carbon Footprint</Link> {/* Added */}
+            <Link to="/carbon-footprint" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>Carbon Footprint</Link> {/* Added */}
             <Link to="/about" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>About</Link>
             <Link to="/help" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>Help</Link>
           </nav>

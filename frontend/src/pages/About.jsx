@@ -29,7 +29,7 @@ const features = [
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gray-100 p-8 mt-10">
+    <div className="min-h-screen bg-gray-100 p-8 mt-14">
       <h1 className="text-4xl font-bold text-center text-blue-600 mb-8">
         Why Choose Us?
       </h1>
