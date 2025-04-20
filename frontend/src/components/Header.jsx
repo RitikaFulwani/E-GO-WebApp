@@ -17,6 +17,9 @@ const Header = () => {
         <nav className="hidden md:flex space-x-6 ml-auto">
           <Link to="/" className="hover:text-blue-300">Home</Link>
           <Link to="/login" className="hover:text-blue-300">Ride With Us</Link>
+          <Link to="/send-message" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>
+    Send SMS
+  </Link>
           <Link to="/captain-signup" className="hover:text-blue-300">Drive With Us</Link>
           <Link to="/carbon-footprint" className="hover:text-blue-300 ">Carbon Footprint</Link> {/* Added */}
           <Link to="/about" className="hover:text-blue-300">About</Link>
@@ -38,6 +41,9 @@ const Header = () => {
           <nav className="flex flex-col items-center space-y-4">
             <Link to="/" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>Home</Link>
             <Link to="/login" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>Ride With Us</Link>
+            <Link to="/send-message" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>
+    Send SMS
+  </Link>
             <Link to="/captain-signup" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>Drive With Us</Link>
             <Link to="/carbon-footprint" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>Carbon Footprint</Link> {/* Added */}
             <Link to="/about" className="hover:text-blue-300" onClick={() => setMenuOpen(false)}>About</Link>

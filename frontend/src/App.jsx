@@ -22,6 +22,7 @@ import Driving from "./components/Driving";
 import Bikes from "./components/Bikes";
 import Bussiness from "./components/Bussiness";
 import CarbonFootprint from "./pages/CarbonFootprint";
+import SendSMS from './pages/SendMessage';
 
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="/carbon-footprint" element={<CarbonFootprint />} />
 
         <Route path='/signup' element={<UserSignup />} />
+        <Route path='/send-message' element={<SendSMS />} />
         <Route path='/captain-login' element={<Captainlogin />} />
         <Route path='/captain-signup' element={<CaptainSignup />} />
         <Route path='/home'

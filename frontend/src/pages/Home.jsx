@@ -198,14 +198,14 @@ const Home = () => {
     }
 
     return (
-        <div className='h-screen relative overflow-hidden '>
+        <div className='h-screen relative overflow-hidden'>
             <img className='w-16 absolute left-5 top-5' src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="" />
             <div className='h-screen w-screen'>
                 {/* image for temporary use  */}
                 <LiveTracking />
             </div>
             <div className=' flex flex-col justify-end h-screen absolute top-0 w-full '>
-            <div className='h-[39%] p-6 bg-white relative'>
+            <div className='h-[42%] p-6 bg-white relative'>
     <h5 ref={panelCloseRef} onClick={() => {
         setPanelOpen(false)
     }} className='absolute opacity-0 right-6 top-6 text-2xl'>
@@ -258,7 +258,7 @@ const Home = () => {
 
     <button
         onClick={findTrip}
-        className='bg-blue-600 text-white px-4 py-2 rounded-lg mt-3 w-full'>
+        className='bg-blue-600 text-white  px-4 py-2 rounded-lg mt-3 w-full'>
         Find Trip
     </button>
 </div>
