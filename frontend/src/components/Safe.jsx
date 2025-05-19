@@ -15,9 +15,9 @@ const Safe = () => {
       <h2 className="text-3xl md:text-4xl text-gray-600 font-bold leading-tight"> Ride{' '}
         <span className="text-cyan-400">Safe</span>{' '}
         <span className="text-blue-500">wit</span>
-        <span className="text-indigo-400">h</span>{' '}
-        <span className="text-indigo-600">Blu</span>
-        <span className="text-blue-800">smart</span>
+        <span className="text-indigo-400">E</span>{' '}
+        <span className="text-indigo-600">-</span>
+        <span className="text-blue-800">G0</span>
       </h2>
 
       <p className="text-gray-600 mt-4 max-w-xl mx-auto px-4 text-lg mb-6">
