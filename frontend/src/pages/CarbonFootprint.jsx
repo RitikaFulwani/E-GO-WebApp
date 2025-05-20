@@ -13,8 +13,8 @@ const CarbonFootprint = () => {
     walk: 0,
   };
 
-  const averageMonthlyEmission = 126; // in kg CO2
-  const electricEmissionRate = 0.01; // very low for electric vehicles
+  const averageMonthlyEmission = 126; 
+  const electricEmissionRate = 0.01; 
 
   const calculateEmissions = () => {
     if (distance && !isNaN(distance)) {
@@ -66,7 +66,7 @@ const CarbonFootprint = () => {
         </button>
       </div>
 
-      {/* Always visible emissions section */}
+      
       <div className="mt-8 w-full max-w-md bg-white bg-opacity-90 p-6 rounded-lg shadow-md text-center">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">Your Carbon Insights</h2>
 

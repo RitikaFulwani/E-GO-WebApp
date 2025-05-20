@@ -6,7 +6,7 @@ const supportOptions = [
   { title: "Riders", icon: <FaCar size={60} />, link: "/help/riders" },
   { title: "Driving & Delivering", icon: <FaMotorcycle size={60} />, link: "/help/driving" },
   { title: "Bikes & Scooters", icon: <FaMotorcycle size={60} />, link: "/help/bikes" },
-  { title: "Uber for Business", icon: <FaBriefcase size={60} />, link: "/help/business" },
+  { title: "E-GO for Business", icon: <FaBriefcase size={60} />, link: "/help/business" },
 ];
 
 const Help = () => {
@@ -15,14 +15,14 @@ const Help = () => {
       {/* Hero Section */}
       <div className="relative w-full h-64 bg-cover bg-center flex flex-col justify-center items-center mt-4"
         style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?sky,clouds')" }}>
-        <h1 className="text-4xl font-bold text-blue-600">Welcome to E-GO Support</h1>
-        <p className="text-gray-600 text-center mt-2 max-w-2xl">
+        <h1 className="text-4xl mt-8 mb-4 font-bold text-blue-600">Welcome to E-GO Support</h1>
+        <p className="text-gray-600 text-center mt-4 max-w-2xl ">
           Looking for customer service information? Choose a category below to get the best assistance.
         </p>
       </div>
 
-      {/* Help Categories */}
-      <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-6 max-w-6xl mx-auto px-4">
+     
+      <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-6 max-w-6xl mx-auto px-4 ">
         {supportOptions.map((option, index) => (
           <Link to={option.link} key={index} className="bg-white p-6 rounded-xl shadow-md text-center border border-gray-200 hover:shadow-lg transition duration-300 ">
             <div className="flex justify-center">{option.icon}</div>

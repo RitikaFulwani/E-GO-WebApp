@@ -4,9 +4,9 @@ const Business = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-6 mt-16">
       <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold text-blue-600 mb-4">Uber for Business Support</h1>
+        <h1 className="text-3xl font-bold text-blue-600 mb-4">E-GO for Business Support</h1>
         <p className="text-gray-700 mb-4">
-          Welcome to the Uber for Business support page! Here, you can find all the information you need to manage your business rides and deliveries with E-GO.
+          Welcome to the E-go for Business support page! Here, you can find all the information you need to manage your business rides and deliveries with E-GO.
         </p>
         <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-2">Getting Started</h2>
         <p className="text-gray-700 mb-4">

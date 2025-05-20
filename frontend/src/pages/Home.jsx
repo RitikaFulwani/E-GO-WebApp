@@ -199,12 +199,11 @@ const Home = () => {
 
     return (
         <div className='h-screen relative overflow-hidden'>
-            <img className='w-16 absolute left-5 top-5' src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="" />
             <div className='h-screen w-screen'>
-                {/* image for temporary use  */}
+                
                 <LiveTracking />
             </div>
-            <div className=' flex flex-col justify-end h-screen absolute top-0 w-full '>
+            <div className=' flex flex-col justify-end h-screen absolute top-0 w-full mb-10'>
             <div className='h-[42%] p-6 bg-white relative'>
     <h5 ref={panelCloseRef} onClick={() => {
         setPanelOpen(false)
@@ -223,7 +222,7 @@ const Home = () => {
             }}
             value={pickup}
             onChange={handlePickupChange}
-            className='bg-[#eee] px-12 py-2 text-lg rounded-lg w-full'
+            className='bg-[#eee] px-12 py-2 text-lg rounded-lg w-1/2 mr-10'
             type="text"
             placeholder='Add a pick-up location'
         />
@@ -234,12 +233,12 @@ const Home = () => {
             }}
             value={destination}
             onChange={handleDestinationChange}
-            className='bg-[#eee] px-12 py-2 text-lg rounded-lg w-full mt-3'
+            className='bg-[#eee] px-12 py-2 text-lg rounded-lg w-1/2 mt-3'
             type="text"
             placeholder='Enter your destination'
         />
 
-        {/* Checkboxes */}
+       
         <div className='mt-4 flex items-center space-x-4'>
             <div className='flex items-center'>
                 <input type="checkbox" id="petFriendly" className="mr-2"/>
@@ -258,7 +257,7 @@ const Home = () => {
 
     <button
         onClick={findTrip}
-        className='bg-blue-600 text-white  px-4 py-2 rounded-lg mt-3 w-full'>
+        className='bg-blue-600 text-white  px-4 py-2 rounded-lg mt-3 w-1/2'>
         Find Trip
     </button>
 </div>

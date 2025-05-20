@@ -1,10 +1,10 @@
 import React from 'react';
-import { ShieldCheck } from 'lucide-react'; // or use your own image if preferred
+import { ShieldCheck } from 'lucide-react'; 
 
 const Safe = () => {
   return (
     <section className="text-center py-20 bg-white relative overflow-hidden">
-      {/* Background arcs or graphic (optional) can be added here */}
+     
 
       <div className="flex justify-center  mb-6">
         <div className="bg-blue-600 p-4 rounded-2xl">
@@ -14,10 +14,10 @@ const Safe = () => {
 
       <h2 className="text-3xl md:text-4xl text-gray-600 font-bold leading-tight"> Ride{' '}
         <span className="text-cyan-400">Safe</span>{' '}
-        <span className="text-blue-500">wit</span>
-        <span className="text-indigo-400">E</span>{' '}
-        <span className="text-indigo-600">-</span>
-        <span className="text-blue-800">G0</span>
+        <span className="text-blue-500">with</span>{' '}
+        <span className="text-blue-500">E</span>
+        <span className="text-blue-600">-</span>
+        <span className="text-blue-700">GO</span>
       </h2>
 
       <p className="text-gray-600 mt-4 max-w-xl mx-auto px-4 text-lg mb-6">
