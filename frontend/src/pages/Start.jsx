@@ -38,7 +38,6 @@ const Start = () => {
       
       <Description />
       <Safe/>
-      {/* <Team/> */}
       <ContactUs />
 
       <Footer/>

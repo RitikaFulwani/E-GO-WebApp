@@ -12,7 +12,7 @@ const supportOptions = [
 const Help = () => {
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Hero Section */}
+      
       <div className="relative w-full h-64 bg-cover bg-center flex flex-col justify-center items-center mt-4"
         style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?sky,clouds')" }}>
         <h1 className="text-4xl mt-8 mb-4 font-bold text-blue-600">Welcome to E-GO Support</h1>

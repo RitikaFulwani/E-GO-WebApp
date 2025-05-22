@@ -34,6 +34,8 @@ const Home = () => {
     const [ fare, setFare ] = useState({})
     const [ vehicleType, setVehicleType ] = useState(null)
     const [ ride, setRide ] = useState(null)
+    const [showFeedback, setShowFeedback] = useState(false);
+    const [isFemalePreferred, setIsFemalePreferred] = useState(false);
 
     const navigate = useNavigate()
 
@@ -170,6 +172,14 @@ const Home = () => {
         setVehiclePanel(true)
         setPanelOpen(false)
 
+        const randomFares = {
+        car: Math.floor(Math.random() * (350 - 250 + 1)) + 250,
+        auto: Math.floor(Math.random() * (150 - 100 + 1)) + 100,
+        moto: Math.floor(Math.random() * (100 - 70 + 1)) + 70
+    };
+
+    setFare(randomFares);
+
         const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/rides/get-fare`, {
             params: { pickup, destination },
             headers: {
@@ -177,7 +187,7 @@ const Home = () => {
             }
         })
 
-
+ setVehicleFound(true);
         setFare(response.data)
 
 
@@ -198,13 +208,15 @@ const Home = () => {
     }
 
     return (
-        <div className='h-screen relative overflow-hidden'>
+        <div className='h-screen relative overflow-hidden '>
             <div className='h-screen w-screen'>
                 
                 <LiveTracking />
             </div>
             <div className=' flex flex-col justify-end h-screen absolute top-0 w-full mb-10'>
-            <div className='h-[42%] p-6 bg-white relative'>
+            <div className='h-[43%] p-6 bg-white relative'>
+    <div className='flex flex-col items-center justify-center w-full'>
+
     <h5 ref={panelCloseRef} onClick={() => {
         setPanelOpen(false)
     }} className='absolute opacity-0 right-6 top-6 text-2xl'>
@@ -214,39 +226,48 @@ const Home = () => {
     <form className='relative py-3' onSubmit={(e) => {
         submitHandler(e)
     }}>
-        <div className="line absolute h-16 w-1 top-[40%] -translate-y-1/2 left-5 bg-gray-700 rounded-full"></div>
+        <div className="line absolute h-16 w-1 top-[40%] -translate-y-1/2 left-5 bg-gray-700 rounded-full ml-44"></div>
         <input
             onClick={() => {
+        e.target.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+
                 setPanelOpen(true)
                 setActiveField('pickup')
             }}
             value={pickup}
             onChange={handlePickupChange}
-            className='bg-[#eee] px-12 py-2 text-lg rounded-lg w-1/2 mr-10'
+            className='bg-[#eee] px-12 py-2 text-lg rounded-lg w-3/4 ml-44 '
             type="text"
             placeholder='Add a pick-up location'
         />
         <input
-            onClick={() => {
-                setPanelOpen(true)
-                setActiveField('destination')
+            onClick={(e) => {
+        setPanelOpen(true)
+        setActiveField('destination')
             }}
             value={destination}
             onChange={handleDestinationChange}
-            className='bg-[#eee] px-12 py-2 text-lg rounded-lg w-1/2 mt-3'
+            className='bg-[#eee] px-12 py-2 text-lg rounded-lg w-3/4 mt-3 ml-44'
             type="text"
             placeholder='Enter your destination'
         />
 
        
-        <div className='mt-4 flex items-center space-x-4'>
+        <div className='mt-4 flex items-center space-x-4 ml-44'>
             <div className='flex items-center'>
-                <input type="checkbox" id="petFriendly" className="mr-2"/>
+                <input type="checkbox" id="petFriendly" className="mr-2 "/>
                 <label htmlFor="petFriendly" className='text-lg'>Pet Friendly</label>
             </div>
             <div className='flex items-center'>
-                <input type="checkbox" id="womenOnly" className="mr-2"/>
-                <label htmlFor="womenOnly" className='text-lg'>For Female Only</label>
+               <input
+  type="checkbox"
+  id="womenOnly"
+  className="mr-2"
+  checked={isFemalePreferred}
+  onChange={(e) => setIsFemalePreferred(e.target.checked)}
+/>
+<label htmlFor="womenOnly" className='text-lg'>For Female Only</label>
+
             </div>
             <div className='flex items-center'>
                 <input type="checkbox" id="quietMusic" className="mr-2"/>
@@ -257,9 +278,10 @@ const Home = () => {
 
     <button
         onClick={findTrip}
-        className='bg-blue-600 text-white  px-4 py-2 rounded-lg mt-3 w-1/2'>
+        className='bg-blue-700 text-white  px-4 py-2 rounded-lg mt-3 w-1/4 ml-8'>
         Find Trip
     </button>
+   </div>
 </div>
 
                 <div ref={panelRef} className='bg-white h-0'>
@@ -289,13 +311,16 @@ const Home = () => {
                     setConfirmRidePanel={setConfirmRidePanel} setVehicleFound={setVehicleFound} />
             </div>
             <div ref={vehicleFoundRef} className='fixed w-full z-10 bottom-0 translate-y-full bg-white px-3 py-6 pt-12'>
-                <LookingForDriver
-                    createRide={createRide}
-                    pickup={pickup}
-                    destination={destination}
-                    fare={fare}
-                    vehicleType={vehicleType}
-                    setVehicleFound={setVehicleFound} />
+               <LookingForDriver
+  createRide={createRide}
+  pickup={pickup}
+  destination={destination}
+  fare={fare}
+  vehicleType={vehicleType}
+  setVehicleFound={setVehicleFound}
+  isFemalePreferred={isFemalePreferred}  
+/>
+
             </div>
             <div ref={waitingForDriverRef} className='fixed w-full  z-10 bottom-0  bg-white px-3 py-6 pt-12'>
                 <WaitingForDriver
@@ -308,4 +333,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;

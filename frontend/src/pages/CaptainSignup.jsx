@@ -114,7 +114,7 @@ const CaptainSignup = () => {
               className="w-full mb-5 px-4 py-2 rounded-lg border bg-gray-100 focus:outline-blue-500"
             />
 
-            {/* Password */}
+            
             <label className="block mb-2 font-medium">Password</label>
             <input
               type="password"
@@ -125,7 +125,7 @@ const CaptainSignup = () => {
               className="w-full mb-5 px-4 py-2 rounded-lg border bg-gray-100 focus:outline-blue-500"
             />
 
-            {/* Vehicle Info */}
+            
             <label className="block mb-2 font-medium">Vehicle Information</label>
             <div className="flex gap-4 mb-5">
               <input
