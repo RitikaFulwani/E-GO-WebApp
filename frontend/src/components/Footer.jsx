@@ -11,9 +11,9 @@ const Footer = () => {
         <p>Sage University, Indore, India</p>
 
         <p className="text-sm">
-          <span className="block">Phone: +91 8966914788 | +91-8103860844 | +91-9617725147</span>
+          <span className="block">Phone: +91 9617725147 | +91-8103860844 | +91-8966914788</span>
           <span className="block">
-            Email: roshani032003@gmail.com | k.mahak1912@gmail.com | ritikafulwani3@gmail.com
+            Email: ritikafulwani3@gmail.com | k.mahak1912@gmail.com | roshani032003@gmail.com
           </span>
         </p>
 
